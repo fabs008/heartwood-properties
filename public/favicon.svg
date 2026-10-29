@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0a0a0a"/><path d="M8 9h4v14H8zM20 9h4v14h-4zM12 14.2h8v3.6h-8z" fill="#fce600"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Heartwood "W" mark with location pin, redrawn from the brand logo -->
+  <rect width="64" height="64" rx="14" fill="#0a0a0a"/>
+  <g transform="translate(10 16.3) scale(0.32)" fill="#fce600">
+    <path d="M14 16 L42 82" stroke="#fce600" stroke-width="31" stroke-linecap="round" fill="none"/>
+    <path d="M66 16 L94 82" stroke="#fce600" stroke-width="31" stroke-linecap="round" fill="none"/>
+    <path fill-rule="evenodd" d="M104 20a16 16 0 0 1 32 0c0 9-9 22-16 36c-7-14-16-27-16-36z M120 11a8 8 0 1 0 0.01 0z"/>
+  </g>
+</svg>
