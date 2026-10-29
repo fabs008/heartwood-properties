@@ -19,6 +19,14 @@ export function startSmoothScroll() {
   }
 }
 
+// Scroll to an in-page section (works whether or not smooth scrolling is on).
+export function scrollToId(hash) {
+  const el = document.querySelector(hash)
+  if (!el) return
+  if (lenis) lenis.scrollTo(el, { duration: 1.4, force: true })
+  else el.scrollIntoView({ behavior: 'smooth' })
+}
+
 // Freeze page scroll while an overlay (menu, gallery) is open.
 export function lockScroll(locked) {
   if (locked) lenis?.stop()
@@ -50,7 +58,9 @@ export function startColourFlow() {
     }
     const cur = sections[k]
     const prev = sections[Math.max(0, k - 1)]
-    const t = k === 0 ? 1 : clamp01((line - cur.el.getBoundingClientRect().top) / (vh * 0.35))
+    // short last sections (the footer) may never travel far enough, so finish the blend at the page bottom
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4
+    const t = k === 0 || atBottom ? 1 : clamp01((line - cur.el.getBoundingClientRect().top) / (vh * 0.35))
     body.backgroundColor = `rgb(${mix(prev.bg, cur.bg, t).join(', ')})`
   }
   const schedule = () => { if (!raf) raf = requestAnimationFrame(paint) }

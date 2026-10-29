@@ -62,7 +62,7 @@ export default function Hero({ started, reducedMotion }) {
       </div>
 
       <div className="hero__content">
-        <p className="kicker hero__kicker">Commercial &amp; industrial property · Western Cape &amp; Gauteng</p>
+        <p className="kicker hero__kicker">Commercial &amp; industrial property<span className="hero__kicker-more"> · Western Cape &amp; Gauteng</span></p>
         <h1 className="hero__title">
           <span className="line"><span>Space to grow.</span></span>
           <span className="line"><span><em>A stake in it.</em></span></span>

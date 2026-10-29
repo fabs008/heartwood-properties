@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { lockScroll } from '../smooth.js'
+import { lockScroll, scrollToId } from '../smooth.js'
 
 export function Logo({ className = '' }) {
   return <img className={`logo ${className}`} src="/img/logo-linear-white.png" alt="Heartwood Properties" width="570" height="128" />
@@ -50,7 +50,7 @@ export function Nav() {
       </button>
       <div className="menu" id="menu" hidden={!open}>
         {[...links, ['Contact', '#contact']].map(([t, h], i) => (
-          <a key={h} href={h} onClick={() => setOpen(false)} style={{ '--i': i }}>
+          <a key={h} href={h} onClick={(e) => { e.preventDefault(); setOpen(false); requestAnimationFrame(() => scrollToId(h)) }} style={{ '--i': i }}>
             <span className="mono">0{i + 1}</span>{t}
           </a>
         ))}

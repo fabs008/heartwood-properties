@@ -53,7 +53,7 @@ export function Objectives() {
   useEffect(() => {
     const io = new IntersectionObserver(([e]) => {
       if (e.isIntersecting) { setRun(true); ref.current.classList.add('is-in'); io.disconnect() }
-    }, { threshold: 0.25 })
+    }, { threshold: 0, rootMargin: '0px 0px -15% 0px' })
     io.observe(ref.current)
     return () => io.disconnect()
   }, [])
@@ -207,7 +207,7 @@ export function Footer() {
   return (
     <footer className="foot" data-bg="#0a0a0a">
       <div className="foot__top">
-        <img src="/img/logo-stacked.png" alt="Heartwood Properties" width="400" height="251" className="foot__logo" />
+        <img src="/img/logo-stacked.png" alt="Heartwood Properties" width="376" height="219" className="foot__logo" />
         <p className="foot__tag">What’s ours, is yours.</p>
       </div>
       <div className="foot__row">

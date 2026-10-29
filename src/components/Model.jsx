@@ -16,7 +16,7 @@ function Tower({ year }) {
   const x0 = 60
   const base = 330
   return (
-    <svg viewBox="0 0 320 380" className="tower" aria-hidden="true">
+    <svg viewBox="0 0 360 380" className="tower" aria-hidden="true">
       <line x1="10" y1={base} x2="310" y2={base} className="tower__ground" />
       {Array.from({ length: floors }, (_, f) => {
         const y = base - (f + 1) * fh
